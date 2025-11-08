@@ -8,7 +8,13 @@ export function buildModule(isDev: boolean): Configuration["module"] {
     exclude: /node_modules/,
   };
 
-  const cssLoader = {
+  const svgrLoader = {
+    test: /\.svg$/i,
+    issuer: /\.[jt]sx?$/,
+    use: ["@svgr/webpack"],
+  };
+
+  const modulesLoader = {
     loader: "css-loader",
     options: {
       modules: {
@@ -20,21 +26,21 @@ export function buildModule(isDev: boolean): Configuration["module"] {
     },
   };
 
-  const cssLoader2 = {
+  const cssLoader = {
     test: /\.css$/i,
     use: ["style-loader", "css-loader"],
-  }
+  };
 
   const scssLoader = {
     test: /\.s[ac]ss$/i,
     use: [
       isDev ? "style-loader" : MiniCssExtractPlugin.loader,
-      cssLoader,
+      modulesLoader,
       "sass-loader",
     ],
   };
 
   return {
-    rules: [tsLoader, scssLoader, cssLoader2],
+    rules: [tsLoader, scssLoader, cssLoader, svgrLoader],
   };
 }
