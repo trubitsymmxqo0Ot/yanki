@@ -1,11 +1,8 @@
-import Vector from './assets/Vector.svg';
-import './App.css';
+import { MainPage } from "@/pages/MainPage"
+import './styles/globals.scss';
+
 export const App = () => {
     return (
-        <>
-        <div>
-        <Vector className='img'/>
-        </div>
-        </>
+        <MainPage/>
     )
-} 
+}

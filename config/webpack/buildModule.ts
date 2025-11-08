@@ -40,7 +40,12 @@ export function buildModule(isDev: boolean): Configuration["module"] {
     ],
   };
 
+  const fileLoader = {
+    test: /\.(woff|woff2|eot|ttf|otf)$/i,
+    type: "asset/resource",
+  };
+
   return {
-    rules: [tsLoader, scssLoader, cssLoader, svgrLoader],
+    rules: [tsLoader, scssLoader, cssLoader, svgrLoader, fileLoader],
   };
 }
