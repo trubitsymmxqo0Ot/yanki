@@ -8,16 +8,33 @@ export function buildModule(isDev: boolean): Configuration["module"] {
     exclude: /node_modules/,
   };
 
-  const sassLoader = {
+  const cssLoader = {
+    loader: "css-loader",
+    options: {
+      modules: {
+        namedExport: false,
+        auto: (resPath: string) => Boolean(resPath.includes(".module.")),
+        localIdentName: isDev ? "[path][name]__[local]" : "[hash:base64:8]",
+        mode: "local",
+      },
+    },
+  };
+
+  const cssLoader2 = {
+    test: /\.css$/i,
+    use: ["style-loader", "css-loader"],
+  }
+
+  const scssLoader = {
     test: /\.s[ac]ss$/i,
     use: [
       isDev ? "style-loader" : MiniCssExtractPlugin.loader,
-      "css-loader",
+      cssLoader,
       "sass-loader",
     ],
   };
 
   return {
-    rules: [tsLoader, sassLoader],
+    rules: [tsLoader, scssLoader, cssLoader2],
   };
 }

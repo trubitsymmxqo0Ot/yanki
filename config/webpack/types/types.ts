@@ -3,6 +3,8 @@ export interface BuildPaths {
     output: string;
     html: string;
     favicon: string;
+    srcPath: string;
+    absolutePath: string;
 }
 
 export type Mode = "production" | "development"; 

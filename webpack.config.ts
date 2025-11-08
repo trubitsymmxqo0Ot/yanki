@@ -9,6 +9,8 @@ export default (env: BuildSettings): webpack.Configuration => {
         output: path.resolve(__dirname, 'build'),
         html: path.resolve(__dirname, 'public', 'index.html'),
         favicon: path.resolve(__dirname, "src", "app", "assets", "favicon.png"),
+        srcPath: path.resolve(__dirname, "src"),
+        absolutePath: path.resolve(__dirname, '.'),
     }
 
     const mode: Mode = env.mode ?? 'development';

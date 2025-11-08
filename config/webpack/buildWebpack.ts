@@ -13,7 +13,7 @@ export function buildWebpack(options: BuildConfig): Configuration {
     entry: paths.etnry,
     mode: mode,
     module: buildModule(isDev),
-    resolve: buildResolve(),
+    resolve: buildResolve(paths),
     plugins: buildPlugins(isDev, paths),
     output: {
       filename: "[name].[contenthash].js",
