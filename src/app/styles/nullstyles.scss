@@ -4,12 +4,21 @@
     box-sizing: border-box;
 }
 
+.app {
+    height: 100vh;
+}
+
+.container {
+    max-width: 1140px;
+    marign: 0 auto;
+}
+
 a {
     color: #000;
     &:hover {
         color: #000;
     }
-    &:active: {
+    &:active {
         color: #000;
     }
 }

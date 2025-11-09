@@ -3,8 +3,13 @@ declare module '*.module.scss' {
     [className: string]: string
   }
   const classNames: IClassNames;
-  export default classNames;
+  export = classNames;
 }
+
+// declare module "*.module.scss" {
+//   const classes: { [key: string]: string };
+//   export default classes;
+// }
 
 declare module "*.svg" {
   const content: React.FunctionComponent<React.SVGAttributes<SVGElement>>;

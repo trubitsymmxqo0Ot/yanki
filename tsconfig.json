@@ -8,8 +8,6 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "strictFunctionTypes": true,
-    "strictNullChecks": true,
-    "strictPropertyInitialization": true,
     "allowArbitraryExtensions": true,
     "module": "esnext",
     "moduleResolution": "node",

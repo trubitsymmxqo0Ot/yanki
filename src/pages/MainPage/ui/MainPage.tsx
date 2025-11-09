@@ -1,9 +1,10 @@
-import './MainPage.css';
+import { MainBody } from "./MainBody/MainBody"
+
 export const MainPage = () => {
     return (
-        <div>
-            <div className='div1'>main page</div>
-            <div className="div2">some text</div>
-        </div>
+        <>
+        {/* <MainHeader/> */}
+        <MainBody/>
+        </>
     )
 }
