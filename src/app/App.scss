@@ -1,7 +1,11 @@
 .app {
+    height: 100wh;
+    width: 100%;
+}
+.app-row {
     display: flex;
     flex-direction: column;
-    height: 100wh;
+    height: 100vh;
 }
 .row {
     flex: 1 1 auto;

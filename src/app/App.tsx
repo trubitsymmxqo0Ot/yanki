@@ -6,12 +6,14 @@ import { Footer } from "@/widgets/Footer/ui/Footer";
 
 export const App = () => {
   return (
-      <div className="app">
+    <div className="app">
+      <div className="container app-row">
         <div className="row">
-          <Header className="header" />
+          <Header/>
           <MainPage />
         </div>
         <Footer className="footer" />
       </div>
+    </div>
   );
 };

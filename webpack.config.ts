@@ -8,7 +8,7 @@ export default (env: BuildSettings): webpack.Configuration => {
         etnry: path.resolve(__dirname, 'src', 'index.tsx'),
         output: path.resolve(__dirname, 'build'),
         html: path.resolve(__dirname, 'public', 'index.html'),
-        favicon: path.resolve(__dirname, "src", "app", "assets", "favicon.png"),
+        favicon: path.resolve(__dirname, "src", "shared", "assets", "favicon.png"),
         srcPath: path.resolve(__dirname, "src"),
         absolutePath: path.resolve(__dirname, '.'),
     }
