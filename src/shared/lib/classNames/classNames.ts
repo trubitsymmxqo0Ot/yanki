@@ -5,12 +5,12 @@ export function classNames(
   ObjectClasses: ObjectClassesType = {},
   ArrayClasses: string[] = []
 ): string {
-  return [
+  const array = [
     clsx,
-    ...Object.entries(ObjectClasses).filter(([_, value]) => Boolean(value))
+    ...Object.entries(ObjectClasses)
+      .filter(([_, value]) => Boolean(value))
       .map(([className]) => className),
     ...ArrayClasses.filter(Boolean),
-  ]
-    .filter(Boolean)
-    .join(" ");
+  ].filter(Boolean);
+  return array.join(" ");
 }

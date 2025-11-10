@@ -19,7 +19,6 @@ export const SwitchModal = (props: SwitchModalProps) => {
   const { className, hook, array, arrow = false, setIsOpen } = props;
   const { isOpen, title } = hook;
   const arrayWithoutTitlte = array.filter((item) => item !== title);
-
   const onOpenModal = () => {
     setIsOpen({
       ...hook,
