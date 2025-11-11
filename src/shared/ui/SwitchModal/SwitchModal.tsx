@@ -1,5 +1,5 @@
 import styles from "./SwitchModal.module.scss";
-import { classNames } from "../lib/classNames/classNames";
+import { classNames } from "../../lib/classNames/classNames";
 import { Dispatch, SetStateAction } from "react";
 import Arrow from "@/shared/assets/icons/arrow.svg";
 export interface HookType {
@@ -8,7 +8,7 @@ export interface HookType {
 }
 
 export interface SwitchModalProps {
-  className: string;
+  className?: string;
   hook: HookType;
   array: string[];
   arrow?: boolean;
@@ -16,7 +16,7 @@ export interface SwitchModalProps {
 }
 
 export const SwitchModal = (props: SwitchModalProps) => {
-  const { className, hook, array, arrow = false, setIsOpen } = props;
+  const { className = "", hook, array, arrow = false, setIsOpen } = props;
   const { isOpen, title } = hook;
   const arrayWithoutTitlte = array.filter((item) => item !== title);
   const onOpenModal = () => {

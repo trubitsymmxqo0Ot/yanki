@@ -21,7 +21,9 @@
     "target": "es5",
     "sourceMap": true,
     "esModuleInterop": true,
+    "moduleResolution": "bundler", //Для storybook
     "baseUrl": ".",
+    "isolatedModules": true,
     "paths": {
       "@/*": ["./src/*"],
       "!/*": ["./*"],

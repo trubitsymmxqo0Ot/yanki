@@ -3,7 +3,7 @@ import SearchIcon from "@/shared/assets/icons/search.svg";
 import ProfileIcon from "@/shared/assets/icons/profile.svg";
 import FavoritesIcon from "@/shared/assets/icons/favorites.svg";
 import TrashIcon from "@/shared/assets/icons/trash.svg";
-import { SwitchModal } from "@/shared/ui/SwitchModal";
+import { SwitchModal } from "@/shared/ui/SwitchModal/SwitchModal";
 import { useState } from "react";
 import { language, currency } from "../../model/lanuages";
 
