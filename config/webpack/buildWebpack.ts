@@ -12,6 +12,7 @@ export function buildWebpack(options: BuildConfig): Configuration {
   return {
     entry: paths.etnry,
     mode: mode,
+    target: ['web', 'es5'],
     module: buildModule(isDev),
     resolve: buildResolve(paths),
     plugins: buildPlugins(isDev, paths),

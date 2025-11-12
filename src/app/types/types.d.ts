@@ -14,3 +14,9 @@ declare module '*.svg' {
 
 declare module "*.css";
 declare module "*.scss";
+
+declare module "*.json" {
+  //eslint-disable-next-line
+  const value: any;
+  export default value;
+}

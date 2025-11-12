@@ -6,6 +6,7 @@ import TrashIcon from "@/shared/assets/icons/trash.svg";
 import { SwitchModal } from "@/shared/ui/SwitchModal/SwitchModal";
 import { useState } from "react";
 import { language, currency } from "../../model/lanuages";
+import { useTranslation } from "react-i18next";
 
 export const Header = () => {
   const [languageSwitcher, setLanguageSwitcher] = useState({
@@ -17,6 +18,8 @@ export const Header = () => {
     title: "uah",
   });
 
+  const {t} = useTranslation("mainPage");
+
   return (
     <header className={styles.header}>
       <div className={styles.burger}>
@@ -24,16 +27,16 @@ export const Header = () => {
       </div>
       <nav className={styles.list}>
         <a href="" className={styles.link}>
-          new
+          {t('new')}
         </a>
         <a href="" className={styles.link}>
-          каталог
+          {t("каталог")}
         </a>
         <a href="" className={styles.link}>
-          о нас
+          {t("о нас")}
         </a>
       </nav>
-      <h1 className={styles.title}>yanki</h1>
+      <h1 className={styles.title}>{t("yanki")}</h1>
       <div className={styles.languages}>
         <div className={styles.language}>
           <SwitchModal

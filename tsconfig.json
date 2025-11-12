@@ -1,5 +1,8 @@
 {
   "compilerOptions": {
+    "moduleResolution": "bundler",
+    "module": "esnext",
+    "target": "es2022",
     "allowUnreachableCode": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true,
@@ -9,8 +12,6 @@
     "noUnusedParameters": true,
     "strictFunctionTypes": true,
     "allowArbitraryExtensions": true,
-    "module": "esnext",
-    "moduleResolution": "node",
     "outDir": "./dist/",
     "removeComments": true,
     "allowJs": true,
@@ -18,10 +19,8 @@
     "allowSyntheticDefaultImports": true,
     "erasableSyntaxOnly": true,
     "jsx": "react-jsx",
-    "target": "es5",
     "sourceMap": true,
     "esModuleInterop": true,
-    "moduleResolution": "bundler", //Для storybook
     "baseUrl": ".",
     "isolatedModules": true,
     "paths": {

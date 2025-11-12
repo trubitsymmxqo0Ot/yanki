@@ -5,22 +5,24 @@ import pluginReact from "eslint-plugin-react";
 import { defineConfig } from "eslint/config";
 import pluginReactHook from "eslint-plugin-react-hooks";
 import pluginReactRefresh from "eslint-plugin-react-refresh";
+import i18next from "eslint-plugin-i18next";
 
 const filesPath = ["src/**/*.{js,ts,jsx,tsx}"];
 
 export default defineConfig([
   {
     files: ["src/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
-    plugins: { js, react: pluginReact },
+    plugins: { js, react: pluginReact, i18next },
     extends: ["js/recommended"],
     settings: {
       react: {
-        version: 'detect'
-      }
+        version: "detect",
+      },
     },
     ignores: ["**/*.stories.{tsx}", "**/*.test.{ts,tsx}"],
     languageOptions: { globals: globals.browser },
     rules: {
+      ...i18next.configs.recommended.rules,
       "array-callback-return": "error",
       "for-direction": "error",
       "no-await-in-loop": "error",
@@ -66,6 +68,12 @@ export default defineConfig([
       "react/display-name": "off",
       "react-refresh/only-export-components": "warn",
       "@typescript-eslint/no-require-imports": "off",
+    },
+  },
+  {
+    files: ["**/src/**/*.test.{ts,tsx,js,jsx}"],
+    rules: {
+      "i18next/no-literal-string": "off",
     },
   },
   {

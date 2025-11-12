@@ -1,8 +1,10 @@
+import { useTranslation } from "react-i18next"
 
 export const MainHeader = () => {
+    const {t} = useTranslation();
     return (
         <div>
-            some content
+            {t("some content")}
         </div>
     )
 }

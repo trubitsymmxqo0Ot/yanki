@@ -1,11 +1,14 @@
+import { useTranslation } from "react-i18next";
+
 export interface MainBodyProps {
     className: string;
 }
 
 export const MainBody = () => {
+    const {t} = useTranslation();
     return (
         <div>
-            Some body content
+            {t("Some body content")}
         </div>
     )
 }
