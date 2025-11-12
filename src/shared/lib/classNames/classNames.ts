@@ -8,7 +8,7 @@ export function classNames(
   const array = [
     clsx,
     ...Object.entries(ObjectClasses)
-      .filter(([_, value]) => Boolean(value))
+      .filter(([className, value]) => className && Boolean(value))
       .map(([className]) => className),
     ...ArrayClasses.filter(Boolean),
   ].filter(Boolean);
