@@ -5,3 +5,5 @@ storybook-static
 coverage
 .env.*
 stories
+.husky
+.vscode
