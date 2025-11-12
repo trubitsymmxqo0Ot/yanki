@@ -1,15 +1,14 @@
 .app {
-    height: 100wh;
-    width: 100%;
+  height: 100wh;
+  width: 100%;
 }
+
 .app-row {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
+
 .row {
-    flex: 1 1 auto;
+  flex: 1 1 auto;
 }
-.header {
-}
-.footer {}

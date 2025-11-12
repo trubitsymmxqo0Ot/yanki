@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: var(--invert_main_color);
+  color: var(--invert-main-color);
   font-size: 18px;
   text-transform: uppercase;
   font-weight: 300;
@@ -17,27 +17,31 @@
   width: 34px;
   cursor: pointer;
   height: 24px;
+
   &::before,
   &::after {
     content: "";
     position: absolute;
     left: 0;
-    background-color: var(--invert_main_color);
+    background-color: var(--invert-main-color);
     height: 4px;
   }
+
   &::before {
     width: 100%;
     top: 0;
   }
-  &:after {
+
+  &::after {
     width: 72.2%;
     top: 50%;
     transform: translate(0, -50%);
   }
+
   span {
     position: absolute;
     bottom: 0;
-    background-color: var(--invert_main_color);
+    background-color: var(--invert-main-color);
     height: 4px;
     width: 53%;
   }
@@ -59,6 +63,7 @@
 
 .languages {
   display: flex;
+
   p {
     cursor: pointer;
   }
@@ -84,8 +89,9 @@
 
 .icon {
   display: block;
-  fill: var(--invert_main_color);
+  fill: var(--invert-main-color);
   margin-right: 30px;
+
   &:last-child {
     margin: 0;
   }
