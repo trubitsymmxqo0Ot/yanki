@@ -3,20 +3,17 @@ import SearchIcon from "@/shared/assets/icons/search.svg";
 import ProfileIcon from "@/shared/assets/icons/profile.svg";
 import FavoritesIcon from "@/shared/assets/icons/favorites.svg";
 import TrashIcon from "@/shared/assets/icons/trash.svg";
-import { SwitchModal } from "@/shared/ui/SwitchModal/SwitchModal";
-import { useState } from "react";
-import { language, currency } from "../../model/lanuages";
+// import { SwitchModal } from "@/shared/ui/SwitchModal/SwitchModal";
+// import { useState } from "react";
+// import { language } from "../../model/lanuages";
 import { useTranslation } from "react-i18next";
+import { HeaderSwitcherLanguage } from "../HeaderSwitcherLanguage/HeaderSwitcherLanguage";
 
 export const Header = () => {
-  const [languageSwitcher, setLanguageSwitcher] = useState({
-    isOpen: false,
-    title: "ru",
-  });
-  const [currencySwitcher, setCurrencySwitcher] = useState({
-    isOpen: false,
-    title: "uah",
-  });
+  // const [languageSwitcher, setLanguageSwitcher] = useState({
+  //   isOpen: false,
+  //   title: "ru",
+  // });
 
   const {t} = useTranslation("mainPage");
 
@@ -39,22 +36,16 @@ export const Header = () => {
       <h1 className={styles.title}>{t("yanki")}</h1>
       <div className={styles.languages}>
         <div className={styles.language}>
-          <SwitchModal
+          {/* <SwitchModal
             className="switcher"
             hook={languageSwitcher}
             array={language}
             setIsOpen={setLanguageSwitcher}
             arrow={true}
-          />
+          /> */}
         </div>
         <div className={styles.currency}>
-          <SwitchModal
-            className="switcher"
-            hook={currencySwitcher}
-            array={currency}
-            setIsOpen={setCurrencySwitcher}
-            arrow={true}
-          />
+          <HeaderSwitcherLanguage/>
         </div>
       </div>
       <div className={styles.widgets}>

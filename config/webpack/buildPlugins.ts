@@ -22,7 +22,7 @@ export function buildPlugins(
     plugins.push(new BundleAnalyzerPlugin({
         analyzerMode: "server",
         analyzerPort: 3009,
-        openAnalyzer: true,
+        openAnalyzer: false, //Пока что анализ мне не нужен, отключил, когда буду заниматься оптимизацией - включу
     }));
   } else {
     plugins.push(
