@@ -17,7 +17,6 @@
     "allowJs": true,
     "checkJs": true,
     "allowSyntheticDefaultImports": true,
-    "erasableSyntaxOnly": true,
     "jsx": "react-jsx",
     "sourceMap": true,
     "esModuleInterop": true,

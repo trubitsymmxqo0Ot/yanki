@@ -1,6 +1,8 @@
 import styles from "./SwitchModal.module.scss";
 import { classNames } from "../../lib/classNames/classNames";
 import Arrow from "@/shared/assets/icons/arrow.svg";
+import { JsxElem } from "@/shared/ui/Text/type/type";
+import {Text} from "@/shared/ui/Text/Text";
 export interface HookType {
   isOpen: boolean;
   title: string;
@@ -16,7 +18,14 @@ export interface SwitchModalProps {
 }
 
 export const SwitchModal = (props: SwitchModalProps) => {
-  const { className = "", hook, array, arrow = false, onToggleModal, onChangeTitle } = props;
+  const {
+    className = "",
+    hook,
+    array,
+    arrow = false,
+    onToggleModal,
+    onChangeTitle,
+  } = props;
   const { isOpen, title } = hook;
   const arrayWithoutTitlte = array.filter((item) => item !== title);
 
@@ -24,21 +33,27 @@ export const SwitchModal = (props: SwitchModalProps) => {
     <div className={styles.wrapper}>
       <div onClick={() => onToggleModal()}>
         <div className={styles.body}>
-          <div className={styles.title}>{hook.title}</div>
-          {arrow && <Arrow className={styles.icon} />}
+          <Text Tag={JsxElem.PARAGRAPH} stylesClass={styles.title} decoration={true}>{hook.title}</Text>
+          {arrow && (
+            <Arrow
+              className={classNames(styles.icon, {[styles.iconOpen]: isOpen})}            
+            />
+          )}
         </div>
       </div>
-      <div className={classNames(styles[className], { [styles.open]: isOpen })}>
+      <ul className={classNames(styles[className], { [styles.open]: isOpen })}>
         {arrayWithoutTitlte.map((item) => (
-          <p
+          <Text
+            Tag={JsxElem.LIST}
             key={item}
             onClick={() => onChangeTitle(item)}
-            className={styles.text}
+            stylesClass={styles.text}
+            decoration={true}
           >
             {item}
-          </p>
+          </Text>
         ))}
-      </div>
+      </ul>
     </div>
   );
 };

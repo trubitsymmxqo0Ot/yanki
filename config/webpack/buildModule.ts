@@ -41,7 +41,7 @@ export function buildModule(isDev: boolean): Configuration["module"] {
   };
 
   const fileLoader = {
-    test: /\.(woff|woff2|eot|ttf|otf)$/i,
+    test: /\.(woff|woff2|eot|ttf|otf|jpeg|png|jpg)$/i,
     type: "asset/resource",
   };
 

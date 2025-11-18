@@ -3,49 +3,40 @@ import SearchIcon from "@/shared/assets/icons/search.svg";
 import ProfileIcon from "@/shared/assets/icons/profile.svg";
 import FavoritesIcon from "@/shared/assets/icons/favorites.svg";
 import TrashIcon from "@/shared/assets/icons/trash.svg";
-// import { SwitchModal } from "@/shared/ui/SwitchModal/SwitchModal";
-// import { useState } from "react";
-// import { language } from "../../model/lanuages";
 import { useTranslation } from "react-i18next";
 import { HeaderSwitcherLanguage } from "../HeaderSwitcherLanguage/HeaderSwitcherLanguage";
+import { HeaderSwitcherCurrency } from "../HeaderSwitcherCurrency/HeaderSwticherCurrency";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { Text } from "@/shared/ui/Text/Text";
+import { JsxClasses, JsxElem } from "@/shared/ui/Text/type/type";
+import { Theme } from "@/shared/const/theme";
 
 export const Header = () => {
-  // const [languageSwitcher, setLanguageSwitcher] = useState({
-  //   isOpen: false,
-  //   title: "ru",
-  // });
-
-  const {t} = useTranslation("mainPage");
+  const { t } = useTranslation("mainPage");
 
   return (
-    <header className={styles.header}>
+    <header className={classNames("container", {}, [styles.header, Theme.LIGHT])}>
       <div className={styles.burger}>
         <span></span>
       </div>
       <nav className={styles.list}>
-        <a href="" className={styles.link}>
-          {t('new')}
-        </a>
-        <a href="" className={styles.link}>
+        <Text Tag={JsxElem.LINK} href="#" stylesClass={styles.link}>
+          {t("new")}
+        </Text>
+        <Text href="#" Tag={JsxElem.LINK} stylesClass={styles.link}>
           {t("каталог")}
-        </a>
-        <a href="" className={styles.link}>
+        </Text>
+        <Text href="#" Tag={JsxElem.LINK} stylesClass={styles.link}>
           {t("о нас")}
-        </a>
+        </Text>
       </nav>
-      <h1 className={styles.title}>{t("yanki")}</h1>
+      <Text Tag={JsxElem.MAIN_TITLE} enumClass={JsxClasses.TITLE}>{t("yanki")}</Text>
       <div className={styles.languages}>
         <div className={styles.language}>
-          {/* <SwitchModal
-            className="switcher"
-            hook={languageSwitcher}
-            array={language}
-            setIsOpen={setLanguageSwitcher}
-            arrow={true}
-          /> */}
+          <HeaderSwitcherLanguage />
         </div>
         <div className={styles.currency}>
-          <HeaderSwitcherLanguage/>
+          <HeaderSwitcherCurrency />
         </div>
       </div>
       <div className={styles.widgets}>

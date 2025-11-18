@@ -9,29 +9,23 @@
 .text {
   position: relative;
   cursor: pointer;
-  margin-bottom: 6px;
-
-  &::before {
-    content: '';
-    position: absolute;
-    bottom: -3px;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background-color: var(--background-color);
-  }
+  margin: 6px;
 
   &:last-child {
     &::before {
       background-color: transparent;
     }
-
   }
 }
 
 .icon {
   fill: var(--invert-main-color);
   background-color: transparent;
+  transition: 500ms ease;
+}
+
+.iconOpen {
+  transform: rotate(180deg);
 }
 
 .body {
@@ -41,15 +35,6 @@
   position: relative;
   margin-bottom: 5px;
 
-  &::before {
-    content: '';
-    width: 100%;
-    height: 1px;
-    position: absolute;
-    background-color: var(--background-color);
-    bottom: -2.5px;
-    left: 0;
-  }
 }
 
 .switcher {

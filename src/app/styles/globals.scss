@@ -1,43 +1,58 @@
-@use './nullstyles';
+@use "./nullstyles";
 
 :root {
-    --main-color: #fff;
-    --invert-main-color: #252525;
-    --background-color: #e0bea2;
-    --size-color: #6f83a4;
-    --size-color2: #f1ddaa;
-    --like-color: #ffa4a4;
-    --popup-header-color: #3d3d3d;
-    --main-page-bg: #3d3d3d;
+  --background-color: #e0bea2;
+  --size-color: #6f83a4;
+  --size-color2: #f1ddaa;
+  --like-color: #ffa4a4;
+  --popup-header-color: #3d3d3d;
+  --main-page-bg: #3d3d3d;
+  --font-light: 300;
+  --font-extra-light: 200;
+  --font-bold: 700;
+}
+
+.light {
+  --main-color: #fff;
+
+  color: var(--main-color);
+  fill: var(--main-color);
+}
+
+.dark {
+  --main-color: #252525;
+
+  color: var(--main-color);
+  fill: var(--main-color);
 }
 
 .container {
-    max-width: 1140px;
-    margin: 0 auto;
+  max-width: 1140px;
+  margin: 0 auto;
 }
 
 @font-face {
-    font-family: Raleway;
-    src: url('../../shared/fonts/static/Raleway-Light.ttf') format('trueType');
-    font-weight: 300;
-    font-style: normal;
+  font-family: Raleway;
+  src: url("../../shared/fonts/static/Raleway-Light.ttf") format("trueType");
+  font-weight: 300;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: Raleway;
-    src: url('../../shared/fonts/static/Raleway-ExtraLight.ttf') format('trueType');
-    font-weight: 200;
-    font-style: normal;
+  font-family: Raleway;
+  src: url("../../shared/fonts/static/Raleway-ExtraLight.ttf")
+    format("trueType");
+  font-weight: 200;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: Raleway;
-    src: url('../../shared/fonts/static/Raleway-Bold.ttf') format('trueType');
-    font-weight: 700;
-    font-style: normal;
+  font-family: Raleway;
+  src: url("../../shared/fonts/static/Raleway-Bold.ttf") format("trueType");
+  font-weight: 700;
+  font-style: normal;
 }
- 
+
 body {
-    font-family: Raleway, sans-serif;
-    font-weight: 200;
+  font-family: Raleway, sans-serif;
 }

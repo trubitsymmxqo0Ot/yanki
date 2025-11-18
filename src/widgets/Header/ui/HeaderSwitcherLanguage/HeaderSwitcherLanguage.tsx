@@ -30,8 +30,6 @@ export const HeaderSwitcherLanguage = () => {
       i18n.changeLanguage(currencySwitcher.title);
     }, [currencySwitcher.title])
 
-
-
     return (
     <SwitchModal
       array={language}
