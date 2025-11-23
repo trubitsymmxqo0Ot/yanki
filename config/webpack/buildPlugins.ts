@@ -17,6 +17,11 @@ export function buildPlugins(
       minify: isDev ? false : true,
     })
   );
+  plugins.push(
+    new webpack.DefinePlugin({
+      __IS_DEV__: isDev,
+    })
+  )
   if (isDev) {
     plugins.push(new webpack.ProgressPlugin());
     plugins.push(new BundleAnalyzerPlugin({

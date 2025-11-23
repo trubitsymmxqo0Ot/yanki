@@ -10,7 +10,7 @@ export interface HookType {
 
 export interface SwitchModalProps {
   className?: string;
-  hook: HookType;
+  hook?: HookType;
   array: string[];
   arrow?: boolean;
   onToggleModal: () => void;
@@ -33,7 +33,7 @@ export const SwitchModal = (props: SwitchModalProps) => {
     <div className={styles.wrapper}>
       <div onClick={() => onToggleModal()}>
         <div className={styles.body}>
-          <Text Tag={JsxElem.PARAGRAPH} stylesClass={styles.title} decoration={true}>{hook.title}</Text>
+          <Text Tag={JsxElem.PARAGRAPH} stylesClass={styles.title} decoration={true}>{title}</Text>
           {arrow && (
             <Arrow
               className={classNames(styles.icon, {[styles.iconOpen]: isOpen})}            

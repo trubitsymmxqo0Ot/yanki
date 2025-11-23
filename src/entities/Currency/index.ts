@@ -1,0 +1,1 @@
+export {currencySlice, currencyReducer} from './model/slice/currencySlice';

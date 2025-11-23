@@ -2,7 +2,7 @@ import js from "@eslint/js";
 import globals from "globals";
 import tseslint from "typescript-eslint";
 import pluginReact from "eslint-plugin-react";
-import { defineConfig } from "eslint/config";
+import { defineConfig, globalIgnores } from "eslint/config";
 import pluginReactHook from "eslint-plugin-react-hooks";
 import pluginReactRefresh from "eslint-plugin-react-refresh";
 import i18next from "eslint-plugin-i18next";
@@ -10,6 +10,7 @@ import i18next from "eslint-plugin-i18next";
 const filesPath = ["src/**/*.{js,ts,jsx,tsx}"];
 
 export default defineConfig([
+  globalIgnores(["./src/shared/config/types/*"]),
   {
     files: ["src/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
     plugins: { js, react: pluginReact, i18next },

@@ -1,5 +1,5 @@
 import { SwitchModal } from "@/shared/ui/SwitchModal/SwitchModal";
-import { language } from "../../model/lanuages";
+import { language } from "@/shared/const/language";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -26,7 +26,6 @@ export const HeaderSwitcherLanguage = () => {
     }
 
     useEffect(() => {
-      console.log(currencySwitcher.title);
       i18n.changeLanguage(currencySwitcher.title);
     }, [currencySwitcher.title])
 

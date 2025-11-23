@@ -1,31 +1,31 @@
 import { SwitchModal } from "@/shared/ui/SwitchModal/SwitchModal";
-import { currency } from "../../model/lanuages";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { currency } from "@/shared/const/language";
+import { fetchCurrency } from "@/entities/Currency/model/async/fetchCurrency";
+import { useAppDispatch, useAppSelector } from "@/shared/config/customHooks/redux";
+import { currencyAction } from "@/entities/Currency/model/slice/currencySlice";
 
 export const HeaderSwitcherCurrency = () => {
-  const [switchCurrency, setSwitchCurrency] = useState({
-    isOpen: false,
-    title: "uah",
-  });
+  const dispatch = useAppDispatch();
+  const selectedCurrency = useAppSelector(state => state.currency.selectedCurrency);
+  const [isOpen, setIsOpen] = useState(false);
+  useEffect(() => {
+    dispatch(fetchCurrency(currency)); 
+  }, [])
 
   const onToggleModal = () => {
-    setSwitchCurrency((prev) => ({
-      ...prev,
-      isOpen: !prev.isOpen,
-    }));
+    setIsOpen(!isOpen);
   };
 
   const onChangeTitle = (title: string) => {
-    setSwitchCurrency((prev) => ({
-      ...prev,
-      title,
-    }));
+    dispatch(currencyAction.changeCurrency(title));
+    setIsOpen(false);
   };
 
   return (
     <SwitchModal
       array={currency}
-      hook={switchCurrency}
+      hook={{title: selectedCurrency, isOpen}}
       onToggleModal={onToggleModal}
       onChangeTitle={onChangeTitle}
       arrow={true}

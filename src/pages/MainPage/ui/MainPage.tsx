@@ -8,9 +8,12 @@ import { JsxElem } from "@/shared/ui/Text/type/type";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { Theme } from "@/shared/const/theme";
 import Arrow from "@/shared/assets/icons/arrow.svg";
+import { useCurrency } from "@/shared/config/customHooks/useCurrency";
 
 export const MainPage = () => {
   const { t } = useTranslation("mainPage");
+  const convert = useCurrency();
+  const answer = convert(2000);
   return (
     <div className={classNames(styles.body, {}, [Theme.LIGHT])}>
       <div className={styles.bgImage}>
@@ -18,6 +21,7 @@ export const MainPage = () => {
         <img src={second} alt="Задний фон с моделью" className={styles.two} />
         <img src={third} alt="Задний фон с моделью" className={styles.three} />
       </div>
+      <p className={styles.test}>{answer}</p>
       <div className={styles.content}>
         <Text Tag={JsxElem.SUB_TITLE} stylesClass={styles.title}>
           {t("Новая коллекция")}
